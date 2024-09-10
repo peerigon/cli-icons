@@ -14,8 +14,14 @@
     }
   ],
   "main": "lib/index.js",
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-chain",
+    "testRegex": "test/.*.js"
+  },
   "scripts": {
-    "test": "node test/print.js",
+    "test": "npm run mac & npm run window",
+    "mac": "node --inspect=127.0.0.1:7026 ./node_modules/jest/bin/jest.js --runInBand  --watch --env node",
+    "window": "npm run mac window",
     "posttest": "eslint ."
   },
   "keywords": [
@@ -32,5 +38,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/peerigon/unicons.git"
+  },
+  "dependencies": {
+    "jest": "^23.6.0",
+    "jest-chain": "^1.0.5",
+    "unicons": "https://github.com/qcgm1978/unicons.git"
   }
 }
